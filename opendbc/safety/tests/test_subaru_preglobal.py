@@ -66,7 +66,7 @@ class TestSubaruPreglobalSafety(common.CarSafetyTest, common.DriverTorqueSteerin
     self.assertTrue(self.safety.get_vehicle_moving())
 
     # Reset to stationary
-    self._rx(libsafety_py.make_CANPacket(0xD4, 0, b"\x00\x00\x00\x00\x00\x00\x00"))
+    self._rx(libsafety_py.make_CANPacket(0xD4, 0, b"\x00\x00\x00\x00\x00\x00\x00\x00"))
     self.assertFalse(self.safety.get_vehicle_moving())
 
     # Second component (bytes 4-7) nonzero, first zero
